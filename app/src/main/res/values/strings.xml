@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Assignment1_mobilProg</string>
+    <string name="coffePrice">Add whipped cream? %1$s \nAddChocolate? %2$s \nQuantity: %3$d \n\nPrice: %4$s \THANK YOU!</string>
+</resources>
