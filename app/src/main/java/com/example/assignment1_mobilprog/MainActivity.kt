@@ -21,32 +21,43 @@ class MainActivity : AppCompatActivity() {
         val chocolateCheckbox = findViewById<CheckBox>(R.id.chocolateCheckbox)
         val creamCheckbox = findViewById<CheckBox>(R.id.creamCheckbox)
 
+        /**
+         * The order button takes the information from quantity and if chocolate and cream checkboxes
+         * where checked or not. It uses this to calculate the price and personalize the message.
+         */
         orderButton.setOnClickListener {
             var price: Double  = 4 * quantityCounter
             var chocolate = "No"
             var cream = "No"
 
+            // Checks if if chocolate is checked.
             if(chocolateCheckbox.isChecked) {
                 price += 1 * quantityCounter
                 chocolate = "yes"
             }
 
-
+            // Checks if if creaqm is checked.
             if(creamCheckbox.isChecked) {
                 price += 0.5 * quantityCounter
                 cream = "yes"
             }
 
-
+            // Uses a get string with variables to create the right message.
             orderSummaryBox.text = getString(R.string.coffePrice, cream, chocolate, quantityCounter, price.toString());
 
         }
 
+        /**
+         * The plus button add 1 to quantity when pressed.
+         */
         plusButton.setOnClickListener {
             quantityCounter ++
             mutableQuantityTextView.text = quantityCounter.toString()
         }
 
+        /**
+         * The minus button subtracts 1 from quantity when pressed.
+         */
         minusButton.setOnClickListener {
             if(quantityCounter > 0) {
                 quantityCounter --
